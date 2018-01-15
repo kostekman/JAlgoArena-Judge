@@ -21,5 +21,11 @@ deploy:
   file: "./build/libs/JAlgoArena-Judge-*.zip"
   skip_cleanup: true
   on:
-    repo: spolnik/JAlgoArena-Judge
-    tags: true
+    repo: kostekman/JAlgoArena-Judge
+    tags: false
+  provider: heroku
+        api_key: e8b086d1-b5ca-4504-8baf-7f55a085b37d
+        app: jalgoarena-judge-koscinsa
+      on:
+        repo: kostekman/JAlgoArena-Judge
+        tags: false

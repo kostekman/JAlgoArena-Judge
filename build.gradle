@@ -8,6 +8,8 @@ buildscript {
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'se.transmode.gradle:gradle-docker:1.2'
+        classpath 'io.swagger:swagger-codegen:2.2.2'
     }
 }
 
@@ -18,14 +20,21 @@ plugins {
 apply plugin: 'kotlin'
 apply plugin: 'org.springframework.boot'
 apply from: "$rootDir/gradle/versioning.gradle"
+apply plugin: 'application'
+apply plugin: 'docker'
 
 group = 'jalgoarena'
 description = """JAlgoArena Judge Service"""
 
 sourceCompatibility = 1.8
+mainClassName = 'com.jalgoarena.JudgeApplication'
 
 repositories {
     mavenCentral()
+}
+
+distDocker {
+    exposePort 5004
 }
 
 configurations {
