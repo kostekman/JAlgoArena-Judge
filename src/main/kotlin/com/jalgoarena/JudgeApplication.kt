@@ -8,8 +8,12 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient
 @SpringBootApplication
 @EnableEurekaClient
 @EnableCaching
-open class JudgeApplication
-
-fun main(args: Array<String>) {
-    SpringApplication.run(JudgeApplication::class.java, *args)
+open class JudgeApplication {
+    companion object {
+        @JvmStatic fun main(args: Array<String>) {
+            SpringApplication.run(JudgeApplication::class.java, *args)
+        }
+    }
 }
+
+
