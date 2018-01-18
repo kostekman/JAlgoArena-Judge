@@ -36,6 +36,7 @@ repositories {
 
 distDocker {
     exposePort 5004
+    push = true
 }
 
 configurations {
